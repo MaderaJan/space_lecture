@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SpaceLecture</string>
+    <string name="space">Space</string>
+    <string name="back">Back</string>
+    <string name="book_mark">Bookmark</string>
+    <string name="read_more">Read More</string>
+    <string name="try_again">Try again</string>
+    <string name="news">News</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="something_went_wrong">Something went wrong</string>
+</resources>
