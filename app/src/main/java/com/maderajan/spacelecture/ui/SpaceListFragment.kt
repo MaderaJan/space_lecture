@@ -1,9 +1,18 @@
 package com.maderajan.spacelecture.ui
 
-// TODO 6. (S) Create SpaceListFragment
-class SpaceListFragment {
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.maderajan.spacelecture.databinding.FragmentSpaceListBinding
 
-    // TODO 7. (S) Create a layout file fragment_space_list.xml
-    // TODO 8. (S) Set Layout using ViewBinding
-    // TODO 9. (S) Create a layout for SpaceListItem via presentation in item_list.xml
+class SpaceListFragment: Fragment() {
+
+    private lateinit var binding: FragmentSpaceListBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentSpaceListBinding.inflate(layoutInflater, container, false)
+        return binding.root
+    }
 }
