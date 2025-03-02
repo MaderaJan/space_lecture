@@ -15,4 +15,12 @@ class SpaceListFragment: Fragment() {
         binding = FragmentSpaceListBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
+
+    // TODO 3. onViewCreated
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // TODO 3. Setup Adapter
+        // TODO 3. Setup LayoutManager
+    }
 }

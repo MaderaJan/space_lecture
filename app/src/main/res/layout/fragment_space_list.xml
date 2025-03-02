@@ -3,4 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+<!--
+        // TODO 2. (S) Toolbar + Recycler
+        <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+-->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
