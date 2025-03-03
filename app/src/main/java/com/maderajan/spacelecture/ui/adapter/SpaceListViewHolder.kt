@@ -7,16 +7,14 @@ import com.maderajan.spacelecture.R
 import com.maderajan.spacelecture.data.SpaceNews
 import com.maderajan.spacelecture.databinding.ItemSpaceListBinding
 
-// TODO 5. SpaceListViewHolder
 class SpaceListViewHolder(
     private val binding: ItemSpaceListBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    // TODO 6- (S) Bind data to ViewHolder
     fun bind(item: SpaceNews, onItemClicked: (SpaceNews) -> Unit, onBookMarkClicked: (SpaceNews) -> Unit) {
-        // TODO 6- (S) Setup click listener and return item
-        // TODO 6- (S) Hint: onItemClicked(item)
-        // binding.root
+        binding.root.setOnClickListener {
+            onItemClicked(item)
+        }
 
         // Loading Image from URL
         binding.imageView.load(item.imageUrl) {
@@ -26,18 +24,14 @@ class SpaceListViewHolder(
             transformations(RoundedCornersTransformation(16f))
         }
 
-        // TODO 6- (S) Bind text to TextViews
-//        binding.titleTextView.text =
-//        binding.newsSiteTextView.text =
-//        binding.dateTextView.text =
+        binding.titleTextView.text = item.title
+        binding.newsSiteTextView.text = item.newsSite
+        binding.dateTextView.text = item.publishedAt
 
-        // TODO 6- (S) Setup click listener and return item
-        // TODO 6- (S) Hint: onBookMarkClicked(item)
-//        binding.bookMarkImageView
-
-        // TODO 6- (S) Setup icon depend on item.isBookmarked
-        // TODO 6- (S) Use –> R.drawable.ic_bookmark_filled, R.drawable.ic_bookmark
-        // TODO 6- (S) Hint: setImageResource
-//        binding.bookMarkImageView
+        binding.bookMarkImageView.setImageResource(if (item.isBookmarked) {
+            R.drawable.ic_bookmark_filled
+        } else {
+            R.drawable.ic_bookmark
+        })
     }
 }

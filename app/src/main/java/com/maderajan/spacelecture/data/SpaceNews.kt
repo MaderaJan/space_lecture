@@ -1,6 +1,5 @@
 package com.maderajan.spacelecture.data
 
-// TODO 1. Data
 data class SpaceNews(
     val id: Long,
     val title: String,
