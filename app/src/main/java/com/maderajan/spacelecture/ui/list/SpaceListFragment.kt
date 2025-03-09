@@ -1,4 +1,4 @@
-package com.maderajan.spacelecture.ui
+package com.maderajan.spacelecture.ui.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.maderajan.spacelecture.databinding.FragmentSpaceListBinding
 import com.maderajan.spacelecture.repository.SpaceNewsRepository
-import com.maderajan.spacelecture.ui.adapter.SpaceListAdapter
+import com.maderajan.spacelecture.ui.list.adapter.SpaceListAdapter
 
 class SpaceListFragment : Fragment() {
 
@@ -26,7 +26,7 @@ class SpaceListFragment : Fragment() {
 
         val adapter = SpaceListAdapter(
             onItemClicked = {
-                // ...
+                // TODO 7. Navigate to SpaceDetail with args
             }, onBookMarkClicked = {
                 // ...
             }

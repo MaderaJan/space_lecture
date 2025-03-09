@@ -6,7 +6,11 @@
 
     <fragment
         android:id="@+id/spaceListFragment"
-        android:name="com.maderajan.spacelecture.ui.SpaceListFragment"
+        android:name="com.maderajan.spacelecture.ui.list.SpaceListFragment"
         android:label="SpaceListFragment" />
+
+<!--    // TODO 3. Register Space List Detail -->
+<!--    // TODO 4. Create Direction to SpaceDetail -->
+<!--    // TODO 5. Add Safe args type of SpaceNews -->
 
 </navigation>

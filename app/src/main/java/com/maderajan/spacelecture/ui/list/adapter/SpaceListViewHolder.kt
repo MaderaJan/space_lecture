@@ -1,4 +1,4 @@
-package com.maderajan.spacelecture.ui.adapter
+package com.maderajan.spacelecture.ui.list.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load

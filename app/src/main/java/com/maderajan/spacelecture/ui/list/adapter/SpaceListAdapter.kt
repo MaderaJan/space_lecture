@@ -1,4 +1,4 @@
-package com.maderajan.spacelecture.ui.adapter
+package com.maderajan.spacelecture.ui.list.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
