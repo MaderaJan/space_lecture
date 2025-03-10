@@ -1,16 +1,32 @@
 package com.maderajan.spacelecture.ui.detail
 
-// TODO 1. Create Space Detail Fragment
-// TODO 2. Register in navigation
-class SpaceDetailFragment
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.compose.ui.platform.ComposeView
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 
-    // TODO 6. Uncomment for getting arguments from fragment
-//    private val args: SpaceDetailFragmentArgs by navArgs()
+class SpaceDetailFragment : Fragment() {
 
-// TODO 6. Uncomment onCreateView
-//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
-//        ComposeView(requireContext()).apply {
-//            setContent {
-//                // SpaceDetail
-//            }
-//        }
+    private val args: SpaceDetailFragmentArgs by navArgs()
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
+        ComposeView(requireContext()).apply {
+            this.setContent {
+                SpaceDetail(
+                    news = args.news,
+                    onArrowBackClicked = {
+                        findNavController()
+                            .navigateUp()
+                    },
+                    onBookmarkClicked = {
+
+                    }
+                )
+            }
+        }
+}
+

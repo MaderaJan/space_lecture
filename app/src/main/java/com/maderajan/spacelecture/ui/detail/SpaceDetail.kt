@@ -16,13 +16,16 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -36,7 +39,6 @@ import com.maderajan.spacelecture.R
 import com.maderajan.spacelecture.data.SpaceNews
 import com.maderajan.spacelecture.util.launchCustomChromeTab
 
-// TODO 8. (S) Space Detail Screen
 @Composable
 fun SpaceDetail(
     news: SpaceNews,
@@ -49,6 +51,7 @@ fun SpaceDetail(
         topBar = {
             SpaceToolbar(
                 title = news.title,
+                bookmarked = news.isBookmarked,
                 onArrowBackClicked = onArrowBackClicked,
                 onBookmarkClicked = onBookmarkClicked
             )
@@ -78,10 +81,10 @@ fun SpaceDetail(
     )
 }
 
-// TODO 9. (S) SpaceToolbar viz presentation
 @Composable
 fun SpaceToolbar(
     title: String,
+    bookmarked: Boolean,
     onArrowBackClicked: () -> Unit,
     onBookmarkClicked: () -> Unit
 ) {
@@ -98,17 +101,36 @@ fun SpaceToolbar(
                     )
                 }
             )
+
             Spacer(modifier = Modifier.weight(1f))
-            // TODO Hint: R.drawable.ic_bookmark
-            //        IconButton() { }
+
+            IconButton(
+                onClick = {
+                    onBookmarkClicked()
+                },
+                content = {
+                    Icon(
+                        painter = painterResource(
+                            if (bookmarked) {
+                                R.drawable.ic_bookmark_filled
+                            } else {
+                                R.drawable.ic_bookmark
+                            }
+                        ),
+                        contentDescription = null
+                    )
+                }
+            )
         }
 
-        // TODO Hint: style = MaterialTheme.typography.titleLarge
-        // TODO Text(text = title)
+        Text(
+            text = title,
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.padding(start = 16.dp)
+        )
     }
 }
 
-// TODO 10 (S) Space Detail content viz presentation
 @Composable
 fun SpaceDetailContent(
     news: SpaceNews,
@@ -143,13 +165,23 @@ fun SpaceDetailContent(
                 .height(200.dp)
         )
 
-        // TODO Hint: style = MaterialTheme.typography.titleSmall,
-        // TODO Hint: news.newsSite
-        // Text
+        Text(
+            text = news.summary,
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.padding(
+                top = 8.dp,
+                start = 16.dp,
+                end = 16.dp,
+            )
+        )
 
-        // TODO HINT style = MaterialTheme.typography.bodyLarge,
-        // TODO HINT: news.summary,
-        // Text
+        Text(
+            text = news.publishedAt,
+            style = MaterialTheme.typography.labelSmall,
+            modifier = Modifier
+                .align(Alignment.End)
+                .padding(vertical = 4.dp, horizontal = 16.dp),
+        )
     }
 }
 

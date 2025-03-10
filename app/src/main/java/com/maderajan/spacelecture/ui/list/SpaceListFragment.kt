@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.maderajan.spacelecture.databinding.FragmentSpaceListBinding
 import com.maderajan.spacelecture.repository.SpaceNewsRepository
@@ -25,8 +26,13 @@ class SpaceListFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val adapter = SpaceListAdapter(
-            onItemClicked = {
-                // TODO 7. Navigate to SpaceDetail with args
+            onItemClicked = { item ->
+                findNavController()
+                    .navigate(
+                        SpaceListFragmentDirections.actionSpaceListFragmentToSpaceDetailFragment(
+                            news = item
+                        )
+                    )
             }, onBookMarkClicked = {
                 // ...
             }

@@ -7,10 +7,19 @@
     <fragment
         android:id="@+id/spaceListFragment"
         android:name="com.maderajan.spacelecture.ui.list.SpaceListFragment"
-        android:label="SpaceListFragment" />
+        android:label="SpaceListFragment" >
+        <action
+            android:id="@+id/action_spaceListFragment_to_spaceDetailFragment"
+            app:destination="@id/spaceDetailFragment" />
+    </fragment>
 
-<!--    // TODO 3. Register Space List Detail -->
-<!--    // TODO 4. Create Direction to SpaceDetail -->
-<!--    // TODO 5. Add Safe args type of SpaceNews -->
+    <fragment
+        android:id="@+id/spaceDetailFragment"
+        android:name="com.maderajan.spacelecture.ui.detail.SpaceDetailFragment"
+        android:label="SpaceDetailFragment" >
+        <argument
+            android:name="news"
+            app:argType="com.maderajan.spacelecture.data.SpaceNews" />
+    </fragment>
 
 </navigation>

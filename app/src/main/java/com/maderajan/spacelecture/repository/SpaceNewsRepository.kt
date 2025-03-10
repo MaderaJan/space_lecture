@@ -12,8 +12,8 @@ class SpaceNewsRepository {
                 SpaceNews(
                     id = it.toLong(),
                     title = "Title$it",
-                    summary = "",
-                    url = "",
+                    summary = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                    url = "https://picsum.photos/200/300",
                     newsSite = "Space",
                     imageUrl = "https://picsum.photos/200/300",
                     publishedAt = "3.3. 2025",
