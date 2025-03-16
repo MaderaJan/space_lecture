@@ -22,4 +22,7 @@
             app:argType="com.maderajan.spacelecture.data.SpaceNews" />
     </fragment>
 
+<!--    // TODO 2. (S) Add FontChangeBottomSheet to Navigation-->
+<!--    // TODO 2. (S) Add Navigate from Detail to FontChangeBottomSheet-->
+
 </navigation>

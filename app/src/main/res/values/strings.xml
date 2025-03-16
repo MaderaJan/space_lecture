@@ -8,4 +8,8 @@
     <string name="news">News</string>
     <string name="bookmarks">Bookmarks</string>
     <string name="something_went_wrong">Something went wrong</string>
+
+    <string name="increase_font_size_title">"Font size"</string>
+    <string name="increase_font_size_description">"This is a sample text that demonstrates the text size you have chosen. You can always return the text size to its original value."</string>
+    <string name="increase_font_size_button_reset">"Reset"</string>
 </resources>
