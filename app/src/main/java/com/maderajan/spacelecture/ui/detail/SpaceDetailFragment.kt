@@ -22,6 +22,10 @@ class SpaceDetailFragment : Fragment() {
                         findNavController()
                             .navigateUp()
                     },
+                    onFontChangedClicked = {
+                        findNavController()
+                            .navigate(SpaceDetailFragmentDirections.actionSpaceDetailFragmentToFontChangeBottomSheet())
+                    },
                     onBookmarkClicked = {
 
                     }

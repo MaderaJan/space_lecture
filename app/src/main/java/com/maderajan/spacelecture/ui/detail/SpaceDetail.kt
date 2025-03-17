@@ -43,7 +43,8 @@ import com.maderajan.spacelecture.util.launchCustomChromeTab
 fun SpaceDetail(
     news: SpaceNews,
     onArrowBackClicked: () -> Unit,
-    onBookmarkClicked: () -> Unit
+    onBookmarkClicked: () -> Unit,
+    onFontChangedClicked: () -> Unit
 ) {
     val context = LocalContext.current
 
@@ -53,7 +54,8 @@ fun SpaceDetail(
                 title = news.title,
                 bookmarked = news.isBookmarked,
                 onArrowBackClicked = onArrowBackClicked,
-                onBookmarkClicked = onBookmarkClicked
+                onBookmarkClicked = onBookmarkClicked,
+                onFontChangedClicked = onFontChangedClicked
             )
         },
         content = { paddingValues ->
@@ -81,13 +83,13 @@ fun SpaceDetail(
     )
 }
 
-// TODO 1. (S) Add ic_change_font_size for Adding font
 @Composable
 fun SpaceToolbar(
     title: String,
     bookmarked: Boolean,
     onArrowBackClicked: () -> Unit,
-    onBookmarkClicked: () -> Unit
+    onBookmarkClicked: () -> Unit,
+    onFontChangedClicked: () -> Unit
 ) {
     Column {
         Row {
@@ -104,6 +106,18 @@ fun SpaceToolbar(
             )
 
             Spacer(modifier = Modifier.weight(1f))
+
+            IconButton(
+                onClick = {
+                    onFontChangedClicked()
+                },
+                content = {
+                    Icon(
+                        painter = painterResource(R.drawable.ic_change_font_size),
+                        contentDescription = null
+                    )
+                }
+            )
 
             IconButton(
                 onClick = {
@@ -201,6 +215,7 @@ fun SpaceDetailPreview() {
             isBookmarked = false
         ),
         onArrowBackClicked = {},
-        onBookmarkClicked = {}
+        onBookmarkClicked = {},
+        onFontChangedClicked = {}
     )
 }

@@ -20,9 +20,14 @@
         <argument
             android:name="news"
             app:argType="com.maderajan.spacelecture.data.SpaceNews" />
+        <action
+            android:id="@+id/action_spaceDetailFragment_to_fontChangeBottomSheet"
+            app:destination="@id/fontChangeBottomSheet" />
     </fragment>
+    <dialog
+        android:id="@+id/fontChangeBottomSheet"
+        android:name="com.maderajan.spacelecture.ui.fontchange.FontChangeBottomSheet"
+        android:label="FontChangeBottomSheet" />
 
-<!--    // TODO 2. (S) Add FontChangeBottomSheet to Navigation-->
-<!--    // TODO 2. (S) Add Navigate from Detail to FontChangeBottomSheet-->
 
 </navigation>
