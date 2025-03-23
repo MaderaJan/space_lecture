@@ -27,7 +27,7 @@ class SpaceDetailFragment : Fragment() {
                             .navigate(SpaceDetailFragmentDirections.actionSpaceDetailFragmentToFontChangeBottomSheet())
                     },
                     onBookmarkClicked = {
-
+                        // TODO (S) 14 use insertOrDeleteBookMark
                     }
                 )
             }
