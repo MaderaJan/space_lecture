@@ -28,10 +28,16 @@ class SpaceListViewHolder(
         binding.newsSiteTextView.text = item.newsSite
         binding.dateTextView.text = item.publishedAt
 
-        binding.bookMarkImageView.setImageResource(if (item.isBookmarked) {
-            R.drawable.ic_bookmark_filled
-        } else {
-            R.drawable.ic_bookmark
-        })
+        binding.bookMarkImageView.setOnClickListener {
+            onBookMarkClicked(item)
+        }
+
+        binding.bookMarkImageView.setImageResource(
+            if (item.isBookmarked) {
+                R.drawable.ic_bookmark_filled
+            } else {
+                R.drawable.ic_bookmark
+            }
+        )
     }
 }

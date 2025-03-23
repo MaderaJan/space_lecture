@@ -40,7 +40,9 @@ class SpaceListFragment : Fragment() {
                         )
                     )
             }, onBookMarkClicked = {
-                // TODO (S) 14 use insertOrDeleteBookMark
+                lifecycleScope.launch {
+                    // TODO (S) 14 use insertOrDeleteBookMark
+                }
             }
         )
 

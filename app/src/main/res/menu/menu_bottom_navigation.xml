@@ -6,8 +6,4 @@
         android:icon="@drawable/ic_news_paper"
         android:title="@string/news" />
 
-    <item
-        android:id="@+id/spaceBookmarkListFragment"
-        android:icon="@drawable/ic_bookmark"
-        android:title="@string/bookmarks" />
 </menu>

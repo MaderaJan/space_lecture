@@ -17,5 +17,5 @@ interface BookmarkDao {
     suspend fun persist(entity: BookmarkEntity)
 
     // TODO (S) 13.
-    suspend fun deleteById(id: Long)
+//    suspend fun deleteById(id: Long)
 }
