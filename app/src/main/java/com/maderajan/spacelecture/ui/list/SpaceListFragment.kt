@@ -41,14 +41,13 @@ class SpaceListFragment : Fragment() {
                     )
             }, onBookMarkClicked = {
                 lifecycleScope.launch {
-                    // TODO (S) 14 use insertOrDeleteBookMark
+                    repository.insertOrDeleteBookMark(it)
                 }
             }
         )
 
         binding.recyclerView.adapter = adapter
 
-        // TODO 10. Launching coroutines in scope
         lifecycleScope.launch {
             repository.getSpaceFlightsSortedByPublishAt()
                 .collectLatest { news ->

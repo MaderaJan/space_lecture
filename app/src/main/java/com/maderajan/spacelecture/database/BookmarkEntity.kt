@@ -3,7 +3,6 @@ package com.maderajan.spacelecture.database
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-// TODO 6. Entity
 @Entity
 data class BookmarkEntity(
     @PrimaryKey

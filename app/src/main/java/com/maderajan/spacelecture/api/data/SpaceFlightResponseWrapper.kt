@@ -3,7 +3,6 @@ package com.maderajan.spacelecture.api.data
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-// TODO 3. Responses
 @Serializable
 data class SpaceFlightNewsResponseWrapper(
     val results: List<SpaceFlightNewsResponse>

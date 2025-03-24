@@ -5,7 +5,6 @@ import com.maderajan.spacelecture.api.data.SpaceFlightNewsResponseWrapper
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-// TODO 1. API Interface
 interface SpaceFlightsNewsApi {
 
     @GET("v4/articles")

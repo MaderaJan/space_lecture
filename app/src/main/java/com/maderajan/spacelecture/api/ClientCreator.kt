@@ -8,7 +8,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import java.util.concurrent.TimeUnit
 
-// TODO 2. API Interface
 object ClientCreator {
 
     private const val TIMEOUT = 30L

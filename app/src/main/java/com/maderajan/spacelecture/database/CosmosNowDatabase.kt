@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-// TODO 5. Database
 @Database(
     entities = [BookmarkEntity::class],
     version = 1,

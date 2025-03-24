@@ -4,7 +4,6 @@ import com.maderajan.spacelecture.api.data.SpaceFlightNewsResponse
 import com.maderajan.spacelecture.data.SpaceNews
 import com.maderajan.spacelecture.database.BookmarkEntity
 
-// TODO 8. Mappers
 fun SpaceFlightNewsResponse.toSpaceNews() = SpaceNews(
     id = this.id,
     title = this.title,
@@ -13,7 +12,7 @@ fun SpaceFlightNewsResponse.toSpaceNews() = SpaceNews(
     newsSite = this.newsSite,
     imageUrl = this.imageUrl,
     publishedAt = this.publishedAt,
-    isBookmarked = false // TODO
+    isBookmarked = false
 )
 
 fun SpaceNews.toEntity() = BookmarkEntity(

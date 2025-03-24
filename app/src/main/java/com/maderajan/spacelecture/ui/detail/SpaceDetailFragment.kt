@@ -13,11 +13,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.maderajan.spacelecture.repository.SpaceNewsRepository
 import kotlinx.coroutines.launch
 
 class SpaceDetailFragment : Fragment() {
 
     private val args: SpaceDetailFragmentArgs by navArgs()
+    private val repository: SpaceNewsRepository by lazy {
+        SpaceNewsRepository(requireContext())
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View =
         ComposeView(requireContext()).apply {
@@ -36,7 +40,7 @@ class SpaceDetailFragment : Fragment() {
                     },
                     onBookmarkClicked = {
                         lifecycleScope.launch {
-                            // TODO (S) 14 use insertOrDeleteBookMark
+                            repository.insertOrDeleteBookMark(news)
                         }
 
                         news = news.copy(isBookmarked = !news.isBookmarked)
